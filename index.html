@@ -443,7 +443,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tagline">Never Give Up! Never Surrender!.</div>
+            <div class="tagline">Never Give Up! Never Surrender!</div>
         </div>
 
         <!-- Stats Grid -->
@@ -842,7 +842,10 @@
                 return;
             }
             
-            const html = filteredTrades.map(trade => {
+            // Reverse the array to show most recent trades first
+            const reversedTrades = [...filteredTrades].reverse();
+            
+            const html = reversedTrades.map(trade => {
                 const pnl = parseFloat(trade.pnl);
                 const pnlPercent = parseFloat(trade.pnlPercent);
                 
